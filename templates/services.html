@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+
+{% block title %}services{% endblock title %}
+
+
+{% block body %}
+<section class="services">
+    <h1>Our services</h1>
+    <p style="color: rgb(29, 28, 28);">We have many services for you</p>
+    <div class="row">
+        <div class="services-col">
+            <a href="/contact"><h3>Graphic design</h3></a>
+            <p>We Innov8studio studio ,hava expert graphic graphic team .We r here to design according to our customers need. Innov8studio provides complete personalized desing as per need nd requirements </p>
+        </div>
+        <div class="services-col">
+            <a href="/contact"><h3>Website design</h3></a>
+            <p>Website desingning is one of the need in the era of internat, We provide complete responsive for all device and solution as per requirement. Innov8studio's team designs best qualiy of websites</p>
+        </div>
+        <div class="services-col">
+            <a href="/contact"><h3>video editing</h3></a>
+            <p>Video content is most effective content for social media , team Innov8studio creates best qualiy animation nd gfx videos ,Videos which will attract traffic is our speciality</p>
+        </div>
+        <div class="services-col">
+            <a href="/contact"><h3>Digital marketing</h3></a>
+            <p>Digital marketing is effective weapon to grow more , we will provide a marketing content to increase u exponential.</p>
+        </div>
+        <div class="services-col">
+            <a href="/contact"><h3>Comming soon</h3></a>
+            <p>New services Comming soon</p>
+        </div>
+        <div class="services-col">
+            <a href="/contact"><h3>Comming soon</h3></a>
+            <p>New services comming soon</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*-----servies-------*/
+
+.services{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+
+}
+h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+p{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+
+}
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.row a{
+    text-decoration: none;
+}
+.services-col{
+    flex-basis: 31%;
+    background: #7a7a7a;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+h3{
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+
+}
+.services-col:hover{
+    box-shadow: 0 0 40px 0px rgba(0, 0, 0, 0.2);
+    transform: scale(1.2);
+}
+@media(max-width: 700px){
+    .row{
+        flex-direction: column;
+    }
+}
+
+</style>
+<script>
+
+</script>
+{% endblock body %}

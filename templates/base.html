@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+    <title>{% block title %}{% endblock title %} my page</title>
+  </head>
+<body>
+<section class="header">
+  <nav>
+    <a href="" ><img src="/static/images/ennovate83.png" width="50px" height="55px" alt=""></a>
+    <div class="nav-links" id="navLinks">
+      <i class="fa fa-times" onclick="hideMenu()"></i>
+      <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/about">ABOUT</a></li>
+        <li><a href="/services">SERVICES</a></li>
+        <li><a href="/contact">CONTACT</a></li>
+      </ul>
+    </div>
+    <i class="fa fa-bars" onclick="ShowMenu()"></i>
+  </nav>
+</section>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+  }
+  .header{
+    height: 90px;
+    width: 100%;
+    background-color: #000000;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  }
+  nav{
+    display: flex;
+    padding: 1.2% 6%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-links{
+    flex: 1;
+    text-align: right;
+  }
+  .nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+  }
+  .nav-links  ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  .nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #fff;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+  }
+  .nav-links ul li:hover::after{
+    width: 100%;
+  }
+  nav .fa{
+    display: none;
+  }
+  @media(max-width: 700px){
+    .nav-links ul li{
+      display: block;
+    }
+    .nav-links{
+      position: absolute;
+      background: #252525;
+      height: 100vh;
+      width: 200px;
+      top: 0;
+      right: -210px;
+      text-align: left;
+      z-index: 2;
+      transition: 1s;
+    }
+    nav .fa{
+      display: block;
+      color: #fff;
+      margin: 10px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+    .nav-links ul{
+      padding: 30px;
+    }
+    nav{
+    
+      padding: 6%;
+    
+  }
+  }
+</style>
+<script>
+  var navLinks = document.getElementById("navLinks");
+
+  function ShowMenu(){
+    navLinks.style.right ="0";
+  }
+  function hideMenu(){
+    navLinks.style.right = "-200px"
+  }
+</script>
+{% if messages %}
+ <ul class="messages">
+    {% for message in messages %}
+    <div class="alert alert-dark alert-dismissible fade show" role="alert">
+      <strong>Your message sent</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+ </ul>
+{% endif %}
+
+{% block body %}
+
+{% endblock body %}
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>company</h4>
+        <ul>
+          <li><a href="about">about us</a></li>
+          <li><a href="services">our services</a></li>
+          <li><a href="contact">contact</a></li>
+          <li><a href="/">affiliate program</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our services</h4>
+        <ul>
+          <li><a href="contact">Graphic desing</a></li>
+          <li><a href="contact">Website desing</a></li>
+          <li><a href="contact">Video editing</a></li>
+          <li><a href="contact">Digital marketing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <style>
+          .footer-col h5:hover{
+            color: rgb(214, 214, 214);
+          }
+        </style>
+        <h4>address and email</h4>
+        <a href="#" style="text-decoration: none; color: #fff"><h5>Ennov8studios@outlook.com</h5></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body{
+	line-height: 1.5;
+	font-family: 'Poppins', sans-serif;
+}
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 70px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+</style>
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
