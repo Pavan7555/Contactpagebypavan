@@ -1,0 +1,1 @@
+web: gunicorn innvostudio.wsgi --log-file
